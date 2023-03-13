@@ -20,6 +20,9 @@ várias linhas (IN, ANY, ALL)
 ### Operador Having 
 ![image](https://user-images.githubusercontent.com/82169520/224715949-728deb66-6b10-40f1-be42-15364a470357.png)
 
+Resumindo, WHERE é usado para filtrar linhas antes do agrupamento, enquanto HAVING é usado para filtrar grupos após o agrupamento.
+É obrigatório usar a cláusula GROUP BY quando se usa a cláusula HAVING em uma consulta SQL. A cláusula GROUP BY é usada para agrupar as linhas de dados com base em uma ou mais colunas, enquanto a cláusula HAVING é usada para filtrar os resultados da consulta com base em condições que se aplicam aos grupos resultantes.
+
 A Cláusula HAVING com Subconsultas
 É possível usar subconsultas tanto na cláusula WHERE como na cláusula HAVING. O servidor Oracle executa a subconsulta, e os resultados são retornados para a cláusula HAVING da consulta principal.
 
