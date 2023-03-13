@@ -64,8 +64,8 @@ WHERE employee_id NOT IN
 FROM employees
 WHERE manager_id IS NOT NULL);
 
-#### Exercicio 01 
-O departamento de recursos humanos precisa de uma consulta que solicite ao usuário o sobrenome de um funcionário. A consulta exibe o sobrenome e a data de admissão de todos os funcionários no mesmo departamento do funcionário cujo nome foi fornecido (excluindo esse funcionário). Por exemplo, se o usuário informar Zlotkey, serão exibidos todos os funcionários que trabalham com Zlotkey (excluindo ele próprio).
+## Exercicio 01 
+### O departamento de recursos humanos precisa de uma consulta que solicite ao usuário o sobrenome de um funcionário. A consulta exibe o sobrenome e a data de admissão de todos os funcionários no mesmo departamento do funcionário cujo nome foi fornecido (excluindo esse funcionário). Por exemplo, se o usuário informar Zlotkey, serão exibidos todos os funcionários que trabalham com Zlotkey (excluindo ele próprio).
 && - Duas vezes pede e guarda
 & - pede o input do user (a janelinha)
 
@@ -86,8 +86,8 @@ where department_id in (
                 where last_name = initcap('&&v_ei'))
 and last_name <> '&v_ei';
 
-### Exercicio 02
-Crie um relatório que exiba o número e o sobrenome de todos os funcionários cujo salário é maior que o salário médio. Classifique os resultados em ordem crescente de salário.
+## Exercicio 02
+### Crie um relatório que exiba o número e o sobrenome de todos os funcionários cujo salário é maior que o salário médio. Classifique os resultados em ordem crescente de salário.
 
 SELECT employee_id, last_name, salary
 FROM   employees
@@ -96,8 +96,8 @@ WHERE  salary > (SELECT AVG(salary)
 ORDER BY salary; 
 
 
-### Exercicio 03
-Crie uma consulta que exiba o número e o sobrenome de todos os funcionários que trabalham em um departamento com funcionários cujos sobrenomes
+## Exercicio 03
+###Crie uma consulta que exiba o número e o sobrenome de todos os funcionários que trabalham em um departamento com funcionários cujos sobrenomes
 contêm a letra u. 
 
 SELECT employee_id, last_name
@@ -106,7 +106,7 @@ WHERE  department_id IN (SELECT department_id
                          FROM   employees
                          WHERE  last_name like '%u%');
 
-### Exercicio 07
+## Exercicio 07
 Modifique a consulta em lab_06_03.sql para exibir o número, o sobrenome,bem como o salário de todos os funcionários que ganham mais que o salário médio e trabalham em um departamento com funcionários cujos sobrenomes contêm a letra u.
 
 SELECT employee_id, last_name, salary
@@ -206,8 +206,8 @@ A cláusula ORDER BY:
   Aceitará o nome da coluna, um apelido ou a notação posicional
 O nome ou o apelido da coluna, se usado em uma cláusula ORDER BY, deverá originar-se da primeira lista SELECT. É possível usar operadores de conjunto em subconsultas.
 
-### Exercicio 01
-O departamento de recursos humanos precisa de uma lista de IDs dos departamentos que não contêm o ID de cargo ST_CLERK. Use os operadores de conjunto para criar esse relatório.
+## Exercicio 01
+### O departamento de recursos humanos precisa de uma lista de IDs dos departamentos que não contêm o ID de cargo ST_CLERK. Use os operadores de conjunto para criar esse relatório.
 
 SELECT department_id
 FROM   departments
@@ -217,7 +217,7 @@ FROM   employees
 WHERE  job_id = 'ST_CLERK';
 
 ### Exercicio 02
-O departamento de recursos humanos precisa de uma lista de países nos quais não há departamentos. Exiba o ID e o nome dos países. Use os operadores de conjunto para criar esse relatório.
+## O departamento de recursos humanos precisa de uma lista de países nos quais não há departamentos. Exiba o ID e o nome dos países. Use os operadores de conjunto para criar esse relatório.
 
 SELECT country_id,country_name
 FROM   countries
@@ -228,7 +228,7 @@ NATURAL JOIN locations
 NATURAL JOIN departments;
 
 ### Exercicio 03
-Produza uma lista de cargos dos departamentos 10, 50 e 20, nessa ordem. Exiba o ID de cargo e o ID de departamento usando operadores de conjunto
+## Produza uma lista de cargos dos departamentos 10, 50 e 20, nessa ordem. Exiba o ID de cargo e o ID de departamento usando operadores de conjunto
 
 COLUMN dummy NOPRINT
 SELECT  job_id, department_id, 'x' dummy
@@ -246,7 +246,7 @@ ORDER BY  dummy;
 COLUMN dummy PRINT
 
 ### Exercicio 04
-Crie um relatório que liste os IDs de funcionário e os IDs de cargo dos funcionários que, no momento, estão no mesmo cargo que ocupavam quando foram admitidos pela empresa (ou seja, eles mudaram de cargo, mas agora voltaram para o cargo original).
+## Crie um relatório que liste os IDs de funcionário e os IDs de cargo dos funcionários que, no momento, estão no mesmo cargo que ocupavam quando foram admitidos pela empresa (ou seja, eles mudaram de cargo, mas agora voltaram para o cargo original).
 
 SELECT    employee_id,job_id
 FROM      employees
@@ -255,7 +255,7 @@ SELECT   employee_id,job_id
 FROM     job_history;
 
 ### Exercicio 05
-O departamento de recursos humanos precisa de um relatório com as seguintes especificações:
+## O departamento de recursos humanos precisa de um relatório com as seguintes especificações:
 Sobrenome e ID do departamento de todos os funcionários da tabela EMPLOYEES, mesmo que não pertençam a um departamento ID e nome de todos os departamentos da tabela DEPARTMENTS, mesmo que não tenham funcionários
 Crie uma consulta composta para isso.
 
