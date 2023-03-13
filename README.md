@@ -78,6 +78,7 @@ AND    last_name <> '&Enter_name';
 
 ou 
 //Janelinha de input
+
 select last_name, hire_date
 from employees
 where department_id in (
